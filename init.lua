@@ -61,7 +61,7 @@ vim.o.timeoutlen = 300
 --   See `:help lua-options`
 --   and `:help lua-options-guide`
 vim.o.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.listchars = { tab = '| ', trail = '·', nbsp = '␣' }
 
 -- Preview substitutions live, as you type!
 vim.o.inccommand = 'split'
@@ -101,6 +101,9 @@ vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 
 -- close buffer
 vim.keymap.set({ 'n', 'v' }, '<M-q>', '<cmd>b#|bd#<cr>')
+
+-- add ';' at end of line
+vim.keymap.set({ 'n' }, '<M-;>', '$a;<esc>')
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`

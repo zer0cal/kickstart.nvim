@@ -61,7 +61,7 @@ vim.o.timeoutlen = 300
 --   See `:help lua-options`
 --   and `:help lua-options-guide`
 vim.o.list = true
-vim.opt.listchars = { tab = '| ', trail = '·', nbsp = '␣' }
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- Preview substitutions live, as you type!
 vim.o.inccommand = 'split'
@@ -845,12 +845,19 @@ require('lazy').setup({
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
     'rebelot/kanagawa.nvim',
-    priority = 1001, -- Make sure to load this before all the other start plugins.
+    priority = 1000, -- Make sure to load this before all the other start plugins.
     config = function()
       ---@diagnostic disable-next-line: missing-fields
       require('kanagawa').setup {
-        styles = {
-          comments = { italic = false }, -- Disable italics in comments
+        commentStyle = { italic = false }, -- Disable italics in comments
+        colors = {
+          theme = {
+            all = {
+              ui = {
+                bg_gutter = 'none',
+              },
+            },
+          },
         },
       }
 

@@ -187,6 +187,23 @@ require('lazy').setup({
     },
   },
 
+  -- Diagnostics
+  {
+    'rachartier/tiny-inline-diagnostic.nvim',
+    event = 'VeryLazy',
+    priority = 1000,
+    config = function()
+      require('tiny-inline-diagnostic').setup {
+        options = {
+          multilines = {
+            enabled = true,
+          },
+        },
+      }
+      vim.diagnostic.config { virtual_text = false } -- Disable Neovim's default virtual text diagnostics
+    end,
+  },
+
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
   --
   -- This is often very useful to both group configuration, as well as handle

@@ -708,7 +708,7 @@ require('lazy').setup({
       },
       formatters = {
         clang_format = {
-          prepend_args = { '--style=file:C:/Users/wojtek/AppData/Local/nvim/clang-format.txt' },
+          prepend_args = { '--style=file:C:/Users/wojci/AppData/Local/nvim/clang-format.txt' },
         },
       },
     },

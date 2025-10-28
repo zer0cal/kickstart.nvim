@@ -194,9 +194,15 @@ require('lazy').setup({
     priority = 1000,
     config = function()
       require('tiny-inline-diagnostic').setup {
+        preset = 'classic',
         options = {
+          show_source = {
+            enabled = true,
+            if_many = true,
+          },
           multilines = {
             enabled = true,
+            always_show = true,
           },
         },
       }

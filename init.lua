@@ -818,6 +818,7 @@ require('lazy').setup({
     --- @type blink.cmp.Config
     opts = {
       keymap = {
+        -- preset = 'default',
         -- 'default' (recommended) for mappings similar to built-in completions
         --   <c-y> to accept ([y]es) the completion.
         --    This will auto-import if your LSP supports it.
@@ -839,12 +840,17 @@ require('lazy').setup({
         -- <c-k>: Toggle signature help
         --
         -- See :h blink-cmp-config-keymap for defining your own keymap
+
+        -- MY CONF
         preset = 'enter',
         ['<tab>'] = { 'select_next', 'fallback' },
-        ['<s-tab>'] = { 'select_prev', 'fallback' },
-        ['<c-n>'] = { 'snippet_forward', 'fallback' },
-        ['<c-p>'] = { 'snippet_backward', 'fallback' },
-        ['<c-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
+        ['<S-tab>'] = { 'select_prev', 'fallback' },
+        ['<C-n>'] = { 'snippet_forward', 'fallback' },
+        ['<C-p>'] = { 'snippet_backward', 'fallback' },
+        ['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
+        ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
+        ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
+
         -- ['<enter>'] = { 'select_and_accept' },
         -- ['<c-k>'] = { 'show' },
         -- ['<c-space>'] = { 'show_documentation' },
